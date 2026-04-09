@@ -1,0 +1,26 @@
+[build]
+builder = "image"
+image = "parseable/parseable:latest"
+
+[deploy]
+startCommand = "parseable local-store"
+healthcheckPath = "/api/v1/liveness"
+restartPolicyType = "ON_FAILURE"
+
+[[services.variables]]
+name = "P_USERNAME"
+description = "Parseable admin username"
+default = "admin"
+
+[[services.variables]]
+name = "P_PASSWORD"
+description = "Parseable admin password"
+required = true
+
+[[services.variables]]
+name = "P_STAGING_DIR"
+default = "/tmp/parseable/staging"
+
+[[services.variables]]
+name = "P_HOT_TIER_PATH"
+default = "/var/lib/parseable"
