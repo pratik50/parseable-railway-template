@@ -91,15 +91,15 @@ git push origin main
   - P_PASSWORD=password123
   - P_STAGING_DIR=/tmp/parseable/staging
   - P_HOT_TIER_PATH=/var/lib/parseable
-4. Wait for deploy to complete.
-5. Open the generated Railway URL.
-6. Validate health endpoint:
+5. Wait for deploy to complete.
+6. Open the generated Railway URL.
+7. Validate health endpoint:
 
 ```bash
 curl https://<your-railway-url>/api/v1/liveness
 ```
 
-7. Send logs to deployed Parseable:
+8. Send logs to deployed Parseable:
 
 ```bash
 PARSEABLE_URL=https://<your-railway-url> node send-logs.js
