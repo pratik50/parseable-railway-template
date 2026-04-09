@@ -86,6 +86,11 @@ git push origin main
 1. Go to Railway dashboard and click New Project.
 2. Choose Deploy from GitHub repo.
 3. Select this repository.
+4. If Railway does not auto-apply env from railway.json, add these variables in the service Variables tab:
+  - P_USERNAME=admin
+  - P_PASSWORD=password123
+  - P_STAGING_DIR=/tmp/parseable/staging
+  - P_HOT_TIER_PATH=/var/lib/parseable
 4. Wait for deploy to complete.
 5. Open the generated Railway URL.
 6. Validate health endpoint:
