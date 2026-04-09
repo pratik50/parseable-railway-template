@@ -1,0 +1,20 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "image": "parseable/parseable:latest"
+  },
+  "deploy": {
+    "healthcheckPath": "/api/v1/liveness",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  },
+  "ports": [
+    8000
+  ],
+  "env": {
+    "P_USERNAME": "admin",
+    "P_PASSWORD": "password123",
+    "P_STAGING_DIR": "/tmp/parseable/staging",
+    "P_HOT_TIER_PATH": "/var/lib/parseable"
+  }
+}
